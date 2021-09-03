@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./Home";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Body from "./Body";
+import './App.css'
+import Searchpage from './Searchpage';
+import Sortingpage from "./Sortingpage";
+import Graphpage from "./Graphpage";
+import Backtrackingpage from "./Bcktracking";
+import Navbar from "./Navbar";
 
 function App() {
   return (
+    <div className="container-fluid">
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+           <Route path="/" exact component={Home} />
+           <Route path="/searchpage" exact component={Searchpage} />
+           <Route path="/sortingpage" exact component={Sortingpage} />
+           <Route path="/graphpage" exact component={Graphpage} />
+           <Route path="/backtrackingpage" exact component={Backtrackingpage} />
+        </Switch>
+      </Router>
+    </div>
     </div>
   );
 }
