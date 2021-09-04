@@ -24,11 +24,11 @@ const Searchpage = () => {
 
     }
     
-    const renderarr = a.map((num) => {
+    const renderarr = a.map((num , idx) => {
         
         return(
             <div className="container">
-            <div className="arr">
+            <div className="arr" key={idx}>
                 {num}
             </div>   
             </div>
@@ -49,18 +49,28 @@ const onInputChange = async e =>{
 }
     
     const linear = () => {
-        
-        for(let i=0; i<16; i++){
+        var i=0;
+        function myLoop() {
+            const axp = document.getElementsByClassName('arr');
+            const pxa = axp[i].style;
+            setTimeout(function(){
+                if(a[i] == data.name){
+                    console.log("yes");
+                    pxa.backgroundColor = '#29ff0c';
+                    //alert("NUMBER MIL GAYA");
+                    return;
+                }
+                else{
+                    pxa.backgroundColor = '#fa5b55';
+                    i++;
+                    myLoop();
+                }
+            }, 1000)
             
-            if(a[i] == data.name){
-                alert("NUMBER MIL GAYA");
-                console.log("yes");
-                return;
-            }
-            console.log(a[i]);
         }
+        myLoop();
         console.log("no");
-        alert("NUMBER NHI MILA");
+        //alert("NUMBER NHI MILA");
     }
     
     
