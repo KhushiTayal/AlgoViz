@@ -66,8 +66,10 @@ const onInputChange = async e =>{
     
     return(
         <div className="Searchpage">
+            <div className="buttons">
             <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr}>Generate Array!</button>
             <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)}>Reset</button>
+            </div>
             <div className="co">
                 {renderarr}
                 
