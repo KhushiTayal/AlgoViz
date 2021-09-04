@@ -14,6 +14,9 @@ const Searchpage = () => {
             arr[i] = element;
             console.log(arr[i]);
         }
+        arr.sort(function (a, b) {
+            return a - b;
+          });
         setArr([...a, ...arr]);
         
            // console.log(a);
@@ -65,14 +68,49 @@ const onInputChange = async e =>{
                     i++;
                     myLoop();
                 }
-            }, 1000)
+            }, 300)
             
         }
         myLoop();
         console.log("no");
         //alert("NUMBER NHI MILA");
     }
-    
+    const binary = () => {
+        var s=0;
+        var e=15;
+        var mid = Math.floor((s+e)/2);
+        function wloop() {
+            const axp = document.getElementsByClassName('arr');
+            const pxa = axp[mid].style;
+            pxa.backgroundColor = 'yellow';
+            setTimeout(() => {
+                if(a[mid] == data.name){
+                    pxa.backgroundColor = '#29ff0c';
+                    return;
+                }
+                else if(a[mid] > data.name){
+                    for(let i=mid+1; i<=e; i++){
+                        axp[i].style.backgroundColor = '#fa5b55';
+                    }
+                    e= mid-1;
+                    mid = (s+e)/2;
+                    
+                }
+                else if(a[mid] < data.name){
+                    for(let i=s; i<mid; i++){
+                        axp[i].style.backgroundColor = '#fa5b55';
+                    }
+                    s= mid+1;
+                    mid = Math.floor((s+e)/2);
+                    
+                }
+                if(s<=e){
+                    wloop();
+                }
+            }, 1000)
+        }
+        wloop();
+    }
     
     return(
         <div className="Searchpage">
@@ -89,7 +127,7 @@ const onInputChange = async e =>{
                 <p className="enter">Enter a number </p>
                 <input type="number" name="name" className="inputnum" onChange={onInputChange}/>
               <button class="btn btn-primary" type="button" onClick={linear} >Linear Search</button>
-              <button class="btn btn-primary" type="button">Binary Search</button>
+              <button class="btn btn-primary" type="button" onClick={binary}>Binary Search</button>
              </div>
             
         </div>
