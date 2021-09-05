@@ -3,6 +3,8 @@ import card from './card.png'
 import './Body.css';
 import card2 from './card2.png'
 import { Link } from 'react-router-dom';
+import search from './search.png'
+import sort from './sort.png'
 
 
 const Body = () => {
@@ -11,17 +13,17 @@ const Body = () => {
   <div className="row">
     <div className="col">
     <div className="card">
-  <img src={card} className="card-img-top" alt="..." />
+  <img src={search} className="card-img-top" alt="..." />
   <div className="card-body">
     <h5 className="card-title">Search Methods</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p className="card-text">Search an element from array using different methods.</p>
     <Link to="/searchpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
   </div>
 </div>
     </div>
     <div className="col">
     <div className="card">
-  <img src={card2} className="card-img-top" alt="..." />
+  <img src={sort} className="card-img-top" alt="..." />
   <div className="card-body">
     <h5 className="card-title">Sorting Algorithms</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
