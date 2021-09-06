@@ -1,12 +1,14 @@
 import React from "react";
 
+const bar = document.getElementsByClassName('bars');
+
 const MergeSort = (props) => {
     console.log("heyya!");
     letsMerge(props, 0, 54);
-    
-    return(
-        <h1>Merge Sort</h1>
-    );
+    for(let i=0; i<55; i++){
+        const barStyle = bar[i].style;
+        barStyle.backgroundColor = 'green';
+    }
 }
 function merge(myArr, l, mid, r){
     var n = mid-l+1;
@@ -61,6 +63,5 @@ function letsMerge(myArr, l, r){
     
     
 }
-
 
 export default MergeSort;

@@ -29,6 +29,7 @@ const Sortingpage = () => {
     }
     );
     const mergefunc = () => {
+    
         MergeSort(a);
         let newArr = [];
         for(var i=0; i<55; i++){
