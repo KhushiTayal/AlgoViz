@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Sortingpage.css'
 import MergeSort from './MergeSort';
+import BubbleSort from './BubbleSort';
 
 const Sortingpage = () => {
     const [a, setArr] = useState([]);
@@ -10,7 +11,6 @@ const Sortingpage = () => {
         for(let i=0; i<55; i++){
             var element = Math.ceil(Math.random() * 400);
             arr[i] = element;
-            console.log(arr[i]);
         }
         setArr([...a, ...arr]);
             setDisable(true)
@@ -28,23 +28,36 @@ const Sortingpage = () => {
         );
     }
     );
+
     const mergefunc = () => {
-    
         MergeSort(a);
         let newArr = [];
         for(var i=0; i<55; i++){
             console.log(a[i]);
             newArr[i] = a[i];
         }
+
         setArr([...arr, ...newArr]);
     }
+
+    const bubbleSortfunc = () => {
+        BubbleSort(a);
+        let newArr = [];
+        for(var i=0; i<55; i++){
+            console.log(a[i]);
+            newArr[i] = a[i];
+        }
+
+        setArr([...arr, ...newArr]);
+    }
+
     return(
         <div className="sortingpage">
             <h1 className="heading">Sorting Visualiser</h1>
             <div>{renderarr}</div>
             <div className="mybtns">
             <button type="button" class="btn btn-outline-primary" onClick={mergefunc}>Merge Sort</button>
-            <button type="button" class="btn btn-outline-secondary">Bubble Sort</button>
+            <button type="button" class="btn btn-outline-secondary" onClick={bubbleSortfunc}>Bubble Sort</button>
             <button type="button" class="btn btn-outline-success">Selection Sort</button>
             <button type="button" class="btn btn-outline-danger">Insertion Sort</button>
             <button type="button" class="btn btn-outline-warning">Quick Sort</button>
