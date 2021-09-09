@@ -1,67 +1,44 @@
-import React from "react";
-
-const bar = document.getElementsByClassName('bars');
-
-const MergeSort = (props) => {
-    console.log("heyya!");
-    letsMerge(props, 0, 54);
-    for(let i=0; i<55; i++){
-        const barStyle = bar[i].style;
-        barStyle.backgroundColor = 'green';
+export function MergeSort(array) {
+    const animations = [];
+    if (array.length <= 1) return array;
+    const extraArr = array.slice();
+    mergeSortHelper(array, 0, array.length - 1, extraArr, animations);
+    return animations;
+  }
+  
+  function mergeSortHelper(mainArray,l,r,extraArr,animations) {
+    if (l === r) return;
+    const mid = Math.floor((l + r) / 2);
+    mergeSortHelper(extraArr, l, mid, mainArray, animations);
+    mergeSortHelper(extraArr, mid + 1, r, mainArray, animations);
+    doMerge(mainArray, l, mid, r, extraArr, animations);
+  }
+  
+  function doMerge(mainArray,l,mid,r,extraArr,animations) {
+    let k = l;
+    let i = l;
+    let j = mid + 1;
+    while (i <= mid && j <= r) {
+      animations.push([i, j]);
+      animations.push([i, j]);
+      if (extraArr[i] <= extraArr[j]) {
+        animations.push([k, extraArr[i]]);
+        mainArray[k++] = extraArr[i++];
+      } else {
+        animations.push([k, extraArr[j]]);
+        mainArray[k++] = extraArr[j++];
+      }
     }
-}
-function merge(myArr, l, mid, r){
-    var n = mid-l+1;
-    var m = r-mid;
-
-    const b = [];
-    const c = [];
-
-    for(let i=0; i<n; i++){
-        b[i] = myArr[l+i];
+    while (i <= mid) {
+      animations.push([i, i]);
+      animations.push([i, i]);
+      animations.push([k, extraArr[i]]);
+      mainArray[k++] = extraArr[i++];
     }
-    for(let i=0; i<m; i++){
-        c[i] = myArr[mid+1+i];
+    while (j <= r) {
+      animations.push([j, j]);
+      animations.push([j, j]);
+      animations.push([k, extraArr[j]]);
+      mainArray[k++] = extraArr[j++];
     }
-
-    let i=0;
-    let j=0;
-    let k=l;
-    while(i<n && j<m){
-        if(b[i]<c[j]){
-            myArr[k]=b[i];
-            k++;
-            i++;
-        }
-        else{
-            myArr[k]=c[j];
-            k++;
-            j++;
-        }   
-    }
-    
-    while(i<n){
-        myArr[k]=b[i];
-        k++;
-        i++;
-    }
-    while(j<m){
-        myArr[k]=c[j];
-        k++;
-        j++;
-    }
-}
-function letsMerge(myArr, l, r){
-    
-        if(l>=r){
-            return;
-        }
-        var mid = Math.floor((l+r)/2);
-        letsMerge(myArr, l, mid);
-        letsMerge(myArr, mid+1, r);
-        merge(myArr, l, mid, r);
-    
-    
-}
-
-export default MergeSort;
+  }
