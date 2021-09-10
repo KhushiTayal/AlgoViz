@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/AlgoViz/static/css/main.2a72d0ed.chunk.css",
+    "main.js": "/AlgoViz/static/js/main.be38a0d1.chunk.js",
+    "main.js.map": "/AlgoViz/static/js/main.be38a0d1.chunk.js.map",
+    "runtime-main.js": "/AlgoViz/static/js/runtime-main.aa4bc348.js",
+    "runtime-main.js.map": "/AlgoViz/static/js/runtime-main.aa4bc348.js.map",
+    "static/js/2.3a5f16ba.chunk.js": "/AlgoViz/static/js/2.3a5f16ba.chunk.js",
+    "static/js/2.3a5f16ba.chunk.js.map": "/AlgoViz/static/js/2.3a5f16ba.chunk.js.map",
+    "index.html": "/AlgoViz/index.html",
+    "static/css/main.2a72d0ed.chunk.css.map": "/AlgoViz/static/css/main.2a72d0ed.chunk.css.map",
+    "static/js/2.3a5f16ba.chunk.js.LICENSE.txt": "/AlgoViz/static/js/2.3a5f16ba.chunk.js.LICENSE.txt",
+    "static/media/abc.f8630668.png": "/AlgoViz/static/media/abc.f8630668.png",
+    "static/media/card.370ba8db.png": "/AlgoViz/static/media/card.370ba8db.png",
+    "static/media/card2.5769cab2.png": "/AlgoViz/static/media/card2.5769cab2.png",
+    "static/media/logo.9f4d4b44.png": "/AlgoViz/static/media/logo.9f4d4b44.png",
+    "static/media/search.def0d721.png": "/AlgoViz/static/media/search.def0d721.png",
+    "static/media/sort.239e5502.png": "/AlgoViz/static/media/sort.239e5502.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aa4bc348.js",
+    "static/js/2.3a5f16ba.chunk.js",
+    "static/css/main.2a72d0ed.chunk.css",
+    "static/js/main.be38a0d1.chunk.js"
+  ]
+}
