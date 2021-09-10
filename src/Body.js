@@ -5,6 +5,7 @@ import card2 from './card2.png'
 import { Link } from 'react-router-dom';
 import search from './search.png'
 import sort from './sort.png'
+import path from './path.png'
 
 
 const Body = () => {
@@ -43,7 +44,7 @@ const Body = () => {
     </div>
     <div className="col">
     <div className="card">
-  <img src={card2} className="card-img-top" alt="..." height="225px" />
+  <img src={path} className="card-img-top" alt="..." height="225px" />
   <div className="card-body">
     <h5 className="card-title">Path Finding</h5>
     <p className="card-text">Coming soon</p>
