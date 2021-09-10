@@ -43,7 +43,7 @@ const Body = () => {
     </div>
     <div className="col">
     <div className="card">
-  <img src="..." className="card-img-top" alt="..." />
+  <img src={card2} className="card-img-top" alt="..." height="225px" />
   <div className="card-body">
     <h5 className="card-title">Path Finding</h5>
     <p className="card-text">Coming soon</p>
