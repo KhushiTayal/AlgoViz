@@ -1,3 +1,4 @@
+import { findAllByTestId } from '@testing-library/react';
 import React, {useState}  from 'react';
 import { Link } from 'react-router-dom'
 import LinearSearch from './Linearsearch';
@@ -127,7 +128,7 @@ const onInputChange = async e =>{
         <div className="Searchpage">
             <div className="buttons">
             <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr}>Generate Array!</button>
-            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(true)}>Reset</button>
+            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)}>Reset</button>
             </div>
             <div className="co">
                 {renderarr}
