@@ -9,7 +9,7 @@ const Sortingpage = () => {
      let arr = [];
      const [disable, setDisable] = useState(false);
     const generatearr = () => {
-        for(let i=0; i<200; i++){
+        for(let i=0; i<250; i++){
             var element = Math.ceil(Math.random() * 400);
             arr[i] = element;
         }
@@ -60,14 +60,31 @@ const Sortingpage = () => {
     }
 
     const bubbleSortfunc = () => {
-        BubbleSort(a);
-        let newArr = [];
-        for(var i=0; i<55; i++){
-            console.log(a[i]);
-            newArr[i] = a[i];
+       const animations = BubbleSort(a);
+       for (let i = 0; i < animations.length; i++){
+        const bar = document.getElementsByClassName('bars');
+        const change = i%3 !== 2;
+        if(change){
+            const [firtstIdx, secondIdx] = animations[i];
+            const secondaryColor = 'blue';
+            const primaryColor = 'hotpink';
+            const barOneStyle = bar[firtstIdx].style;
+            const barTwoStyle = bar[secondIdx].style;
+            const color = i % 3 === 0 ? secondaryColor : primaryColor;
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+              }, i * 0.1);
         }
+        else{
+            setTimeout(() => {
+                const [firtstIdx, newHeight] = animations[i];
+                const barOneStyle = bar[firtstIdx].style;
+                barOneStyle.height = `${newHeight}px`;
 
-        setArr([...arr, ...newArr]);
+            }, i * 0.1);
+        }
+    }
     }
 
     const Selectionfunc = () => {

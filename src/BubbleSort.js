@@ -1,18 +1,31 @@
 import React from "react";
 
 const BubbleSort = (props) => {
-    letsBubbleSort(props, 55);
+    const animations = [];
+    const extraArray = props.slice();
+    console.log(extraArray);
+    letsBubbleSort(props, 250, animations, extraArray);
+    console.log(extraArray);
+    return animations;
 }
 
-const letsBubbleSort = (myArr, n) => {
+const letsBubbleSort = (myArr, n, animations, extraArray) => {
     var unsorted = false;
-    for(let i=0; i<55; i++){
-        for(let j=0; j<54; j++){
-            if(myArr[j] > myArr[j+1]){
-                var temp = myArr[j];
-                myArr[j] = myArr[j+1];
-                myArr[j+1] = temp;
+    for(let a=0; a<n; a++){
+        let e = n-a-1;
+        for(let j=0; j<e; j++){
+            let k=j+1;
+            animations.push([j, k]);
+            animations.push([j, k]);
+            if(extraArray[j] > extraArray[j+1]){
+                var temp = extraArray[j];
+                extraArray[j] = extraArray[j+1];
+                extraArray[j+1] = temp;
+                animations.push([j, extraArray[j]]);
                 unsorted = true;
+            }
+            else{
+                animations.push([j, extraArray[j]]);
             }
         }
         if(unsorted == false){

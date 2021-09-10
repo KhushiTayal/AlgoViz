@@ -19,12 +19,12 @@
              0 9px 10px rgba(0, 0, 0, 0.2);
 }
 .bars{
-    background-color: hotpink;
+    background-color: rgb(145, 238, 215);
     float: left;
-    //border: 2px black solid;
+    border: 0.5px white solid;
     width: 5px;
     display: inline-block;
     padding: 1px;
-    margin: 0.5px;
+    margin: 0px;
     border-radius: 5px;
 }
