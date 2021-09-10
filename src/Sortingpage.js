@@ -63,25 +63,27 @@ const Sortingpage = () => {
        const animations = BubbleSort(a);
        for (let i = 0; i < animations.length; i++){
         const bar = document.getElementsByClassName('bars');
-        const change = i%3 !== 2;
+        const change = (i%4 === 0) || (i%4 === 1);
         if(change){
             const [firtstIdx, secondIdx] = animations[i];
             const secondaryColor = 'blue';
             const primaryColor = 'hotpink';
             const barOneStyle = bar[firtstIdx].style;
             const barTwoStyle = bar[secondIdx].style;
-            const color = i % 3 === 0 ? secondaryColor : primaryColor;
+            const color = i % 4 === 0 ? secondaryColor : primaryColor;
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
               }, i * 0.1);
         }
         else{
+            const [firtstIdx, newHeight] = animations[i];
+                if(firtstIdx === -1){
+                    continue;
+                }
             setTimeout(() => {
-                const [firtstIdx, newHeight] = animations[i];
                 const barOneStyle = bar[firtstIdx].style;
                 barOneStyle.height = `${newHeight}px`;
-
             }, i * 0.1);
         }
     }

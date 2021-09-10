@@ -11,21 +11,24 @@ const BubbleSort = (props) => {
 
 const letsBubbleSort = (myArr, n, animations, extraArray) => {
     var unsorted = false;
-    for(let a=0; a<n; a++){
+    for(let a=0; a<n-1; a++){
         let e = n-a-1;
         for(let j=0; j<e; j++){
             let k=j+1;
             animations.push([j, k]);
             animations.push([j, k]);
             if(extraArray[j] > extraArray[j+1]){
+                animations.push([j, extraArray[j+1]]);
+                animations.push([j+1, extraArray[j]]);
                 var temp = extraArray[j];
                 extraArray[j] = extraArray[j+1];
                 extraArray[j+1] = temp;
-                animations.push([j, extraArray[j]]);
+                
                 unsorted = true;
             }
             else{
-                animations.push([j, extraArray[j]]);
+                animations.push([-1, -1]);
+                animations.push([-1, -1]);
             }
         }
         if(unsorted == false){
