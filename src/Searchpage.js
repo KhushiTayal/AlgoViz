@@ -65,8 +65,14 @@ const onInputChange = async e =>{
                 }
                 else{
                     pxa.backgroundColor = '#fa5b55';
-                    i++;
-                    myLoop();
+                    pxa.textDecoration = "line-through";
+                    if(i<15){
+                        i++;
+                        myLoop();
+                    }
+                    else{
+                        alert("Number not found");
+                    }
                 }
             }, 300)
             
@@ -91,6 +97,7 @@ const onInputChange = async e =>{
                 else if(a[mid] > data.name){
                     for(let i=mid+1; i<=e; i++){
                         axp[i].style.backgroundColor = '#fa5b55';
+                        axp[i].style.textDecoration = "line-through";
                     }
                     e= mid-1;
                     mid = (s+e)/2;
@@ -99,6 +106,7 @@ const onInputChange = async e =>{
                 else if(a[mid] < data.name){
                     for(let i=s; i<mid; i++){
                         axp[i].style.backgroundColor = '#fa5b55';
+                        axp[i].style.textDecoration = "line-through";
                     }
                     s= mid+1;
                     mid = Math.floor((s+e)/2);
@@ -106,6 +114,9 @@ const onInputChange = async e =>{
                 }
                 if(s<=e){
                     wloop();
+                }
+                else{
+                    alert("Number not found");
                 }
             }, 1000)
         }
@@ -116,7 +127,7 @@ const onInputChange = async e =>{
         <div className="Searchpage">
             <div className="buttons">
             <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr}>Generate Array!</button>
-            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)}>Reset</button>
+            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(true)}>Reset</button>
             </div>
             <div className="co">
                 {renderarr}

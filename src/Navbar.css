@@ -1,5 +1,5 @@
 
-.nv{
+/* .nv{
 
     height: 60px;
   display: flex;
@@ -8,11 +8,25 @@
   position: sticky;
   top: 0;
   z-index: 100;
-}
+} */
 
 .header__logo {
     width: 100px;
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px;
+    color: #8cf7f7;
   }
+
+  /* .navbar navbar-expand-lg navbar-light bg-light{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  } */
+.navbar navbar-light{
+  background-color: blue;
+}

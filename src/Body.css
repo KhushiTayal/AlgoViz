@@ -4,12 +4,12 @@
     background: white;
 }
 .row{
-    position: absolute;
+    position: relative;
     top: 30%;
-    left: 10%;
-    background-color: aquamarine;
+    left: auto;
+    right: auto;
     
 }
 .body{
-    background-color: yellowgreen;
+    background-color: #06cef1;
 }
