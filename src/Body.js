@@ -13,7 +13,7 @@ const Body = () => {
   <div className="row">
     <div className="col">
     <div className="card">
-  <img src={search} className="card-img-top" alt="..." />
+  <img src={search} className="card-img-top" alt="..." height="200px" />
   <div className="card-body">
     <h5 className="card-title">Search Methods</h5>
     <p className="card-text">Search an element from array using different methods.</p>
@@ -26,17 +26,17 @@ const Body = () => {
   <img src={sort} className="card-img-top" alt="..." />
   <div className="card-body">
     <h5 className="card-title">Sorting Algorithms</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p className="card-text">Sort array using different sorting algorithms.</p>
     <Link to="/sortingpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
   </div>
 </div>
     </div>
     <div className="col">
     <div className="card">
-  <img src={card} className="card-img-top" alt="..." />
+  <img src={card} className="card-img-top" alt="..." height="225px" />
   <div className="card-body">
     <h5 className="card-title">Backtracking</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p className="card-text">Coming soon</p>
     <Link to="/backtrackingpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
   </div>
 </div>
@@ -45,8 +45,8 @@ const Body = () => {
     <div className="card">
   <img src="..." className="card-img-top" alt="..." />
   <div className="card-body">
-    <h5 className="card-title">Graph Algorithms</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 className="card-title">Path Finding</h5>
+    <p className="card-text">Coming soon</p>
     <Link to="/graphpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
   </div>
 </div>
