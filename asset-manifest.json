@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AlgoViz/static/css/main.010527ce.chunk.css",
-    "main.js": "/AlgoViz/static/js/main.a220db76.chunk.js",
-    "main.js.map": "/AlgoViz/static/js/main.a220db76.chunk.js.map",
+    "main.js": "/AlgoViz/static/js/main.ab721201.chunk.js",
+    "main.js.map": "/AlgoViz/static/js/main.ab721201.chunk.js.map",
     "runtime-main.js": "/AlgoViz/static/js/runtime-main.aa4bc348.js",
     "runtime-main.js.map": "/AlgoViz/static/js/runtime-main.aa4bc348.js.map",
     "static/js/2.f84c7b6c.chunk.js": "/AlgoViz/static/js/2.f84c7b6c.chunk.js",
@@ -14,6 +14,7 @@
     "static/media/card.370ba8db.png": "/AlgoViz/static/media/card.370ba8db.png",
     "static/media/card2.5769cab2.png": "/AlgoViz/static/media/card2.5769cab2.png",
     "static/media/logo.9f4d4b44.png": "/AlgoViz/static/media/logo.9f4d4b44.png",
+    "static/media/path.d26f7f0a.png": "/AlgoViz/static/media/path.d26f7f0a.png",
     "static/media/search.def0d721.png": "/AlgoViz/static/media/search.def0d721.png",
     "static/media/sort.239e5502.png": "/AlgoViz/static/media/sort.239e5502.png"
   },
@@ -21,6 +22,6 @@
     "static/js/runtime-main.aa4bc348.js",
     "static/js/2.f84c7b6c.chunk.js",
     "static/css/main.010527ce.chunk.css",
-    "static/js/main.a220db76.chunk.js"
+    "static/js/main.ab721201.chunk.js"
   ]
 }
