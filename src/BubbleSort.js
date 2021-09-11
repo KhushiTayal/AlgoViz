@@ -3,7 +3,6 @@ import React from "react";
 const BubbleSort = (props) => {
     const animations = [];
     const extraArray = props.slice();
-    console.log(extraArray);
     letsBubbleSort(props, 250, animations, extraArray);
     console.log(extraArray);
     return animations;
@@ -20,7 +19,7 @@ const letsBubbleSort = (myArr, n, animations, extraArray) => {
             if(extraArray[j] > extraArray[j+1]){
                 animations.push([j, extraArray[j+1]]);
                 animations.push([j+1, extraArray[j]]);
-                var temp = extraArray[j];
+                const temp = extraArray[j];
                 extraArray[j] = extraArray[j+1];
                 extraArray[j+1] = temp;
                 

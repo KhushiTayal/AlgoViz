@@ -3,6 +3,7 @@ import './Sortingpage.css'
 import BubbleSort from './BubbleSort';
 import SelectionSort from './SelectionSort';
 import { MergeSort } from './MergeSort';
+import InsertionSort from './InsertionSort';
 
 const Sortingpage = () => {
     const [a, setArr] = useState([]);
@@ -74,7 +75,7 @@ const Sortingpage = () => {
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 0.1);
+              }, i * 1);
         }
         else{
             const [firtstIdx, newHeight] = animations[i];
@@ -84,20 +85,69 @@ const Sortingpage = () => {
             setTimeout(() => {
                 const barOneStyle = bar[firtstIdx].style;
                 barOneStyle.height = `${newHeight}px`;
-            }, i * 0.1);
+            }, i * 1);
         }
     }
     }
 
     const Selectionfunc = () => {
-        SelectionSort(a);
-        let newArr = [];
-        for(var i=0; i<55; i++){
-            console.log(a[i]);
-            newArr[i] = a[i];
+        const animations = SelectionSort(a);
+        for (let i = 0; i < animations.length; i++){
+            const bar = document.getElementsByClassName('bars');
+            const change = (i%4 === 0) || (i%4 === 1);
+            if(change){
+                const [firtstIdx, secondIdx] = animations[i];
+                const secondaryColor = 'blue';
+                const primaryColor = 'hotpink';
+                const barOneStyle = bar[firtstIdx].style;
+                const barTwoStyle = bar[secondIdx].style;
+                const color = i % 4 === 0 ? secondaryColor : primaryColor;
+                setTimeout(() => {
+                    barOneStyle.backgroundColor = color;
+                    barTwoStyle.backgroundColor = color;
+                  }, i * 0.1);
+            }
+            else{
+                const [firtstIdx, newHeight] = animations[i];
+                    if(firtstIdx === -1){
+                        continue;
+                    }
+                setTimeout(() => {
+                    const barOneStyle = bar[firtstIdx].style;
+                    barOneStyle.height = `${newHeight}px`;
+                }, i * 0.1);
+            }
         }
+    }
 
-        setArr([...arr, ...newArr]);
+    const Insertionfunc = () => {
+        const animations = InsertionSort(a);
+        for (let i = 0; i < animations.length; i++){
+            const bar = document.getElementsByClassName('bars');
+            const change = (i%4 === 0) || (i%4 === 1);
+            if(change){
+                const [firtstIdx, secondIdx] = animations[i];
+                const secondaryColor = 'blue';
+                const primaryColor = 'hotpink';
+                const barOneStyle = bar[firtstIdx].style;
+                const barTwoStyle = bar[secondIdx].style;
+                const color = i % 4 === 0 ? secondaryColor : primaryColor;
+                setTimeout(() => {
+                    barOneStyle.backgroundColor = color;
+                    barTwoStyle.backgroundColor = color;
+                  }, i * 1);
+            }
+            else{
+                const [firtstIdx, newHeight] = animations[i];
+                    if(firtstIdx === -1){
+                        continue;
+                    }
+                setTimeout(() => {
+                    const barOneStyle = bar[firtstIdx].style;
+                    barOneStyle.height = `${newHeight}px`;
+                }, i * 1);
+            }
+        }
     }
     return(
         <div className="sortingpage">
@@ -107,7 +157,7 @@ const Sortingpage = () => {
             <button type="button" class="btn btn-outline-primary" onClick={mergefunc}>Merge Sort</button>
             <button type="button" class="btn btn-outline-secondary" onClick={bubbleSortfunc}>Bubble Sort</button>
             <button type="button" class="btn btn-outline-success" onClick={Selectionfunc}>Selection Sort</button>
-            <button type="button" class="btn btn-outline-danger">Insertion Sort</button>
+            <button type="button" class="btn btn-outline-danger" onClick={Insertionfunc}>Insertion Sort</button>
             <button type="button" class="btn btn-outline-warning">Quick Sort</button>
             <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>RESET</button>
             <button type="button" class="btn btn-outline-light">Light</button>
