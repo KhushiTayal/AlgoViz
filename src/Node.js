@@ -3,6 +3,7 @@ import './Node.css'
 
 const Node = (props) => {
     const {wallPresent, startNode, endNode, vis, row, col} = props;
+    
     const decideClass = () => {
         if(wallPresent===true){
             return "node wall";

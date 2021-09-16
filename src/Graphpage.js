@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Node from './Node'
 import './Graphpage.css'
 
 const Graphpage = () => {
-    const grid=[];
-    const width = window.innerWidth;
+    const [grid, setGrid] = useState([]);
+    useEffect(() => {
+        const width = window.innerWidth;
         const height = window.innerHeight;
         const num_row = Math.max(Math.floor(height/25),10);
         const num_col = Math.floor(width/25) -1;
@@ -16,6 +17,15 @@ const Graphpage = () => {
             row: num_row-5,
             col: num_col-5
         }
+        const mygrid = getgrid(num_row, num_col);
+        mygrid[startNode.row][startNode.col].startNode=true;
+        mygrid[num_row-5][num_col-5].endNode=true;
+        setGrid([...grid, ...mygrid]);
+        return () => {
+            
+        }
+    }, [])
+    
         const createNode = (row, col) => {
             return(
                 {wallPresent:false,
@@ -27,15 +37,18 @@ const Graphpage = () => {
                 }
             )
         }
-    for(let i=0; i<num_row; i++){
-        const row=[];
-        for(let j=0; j<num_col; j++){
-            row.push(createNode(i, j));
+    const getgrid = (num_row, num_col) => {
+        const grid = [];
+        for(let i=0; i<num_row; i++){
+            const row=[];
+            for(let j=0; j<num_col; j++){
+                row.push(createNode(i, j));
+            }
+            grid.push(row);
         }
-        grid.push(row);
+        return grid;
     }
-    grid[startNode.row][startNode.col].startNode=true;
-    grid[num_row-5][num_col-5].endNode=true;
+    
     const renderGrid = grid.map((row, row_idx)=>{
         return(
             <div className="row">
