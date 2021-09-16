@@ -16,24 +16,38 @@ const Graphpage = () => {
             row: num_row-5,
             col: num_col-5
         }
+        const createNode = (row, col) => {
+            return(
+                {wallPresent:false,
+                    startNode:false,
+                    endNode:false,
+                    vis:false,
+                    row,
+                    col
+                }
+            )
+        }
     for(let i=0; i<num_row; i++){
         const row=[];
         for(let j=0; j<num_col; j++){
-            const col=[];
-            row.push(col);
+            row.push(createNode(i, j));
         }
         grid.push(row);
     }
+    grid[startNode.row][startNode.col].startNode=true;
+    grid[num_row-5][num_col-5].endNode=true;
     const renderGrid = grid.map((row, row_idx)=>{
         return(
             <div className="row">
                { row.map((node, node_idx)=>{
-                   const {wallPresent, startNode, endNode, vis} = node;
+                   const {wallPresent, startNode, endNode, vis, row, col} = node;
                     return(
                         // <div className="nodes">
                         //     <Node />
                         // </div>
                         <Node
+                        row={row}
+                        col={col}
                         key={node_idx}
                         wallPresent={wallPresent}
                         startNode={startNode}
