@@ -3,7 +3,7 @@ import React from "react";
 const BubbleSort = (props) => {
     const animations = [];
     const extraArray = props.slice();
-    letsBubbleSort(props, 250, animations, extraArray);
+    letsBubbleSort(props, props.length, animations, extraArray);
     console.log(extraArray);
     return animations;
 }

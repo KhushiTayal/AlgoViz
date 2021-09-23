@@ -10,8 +10,11 @@ const Sortingpage = () => {
     const [a, setArr] = useState([]);
      let arr = [];
      const [disable, setDisable] = useState(false);
+     const width = window.innerWidth;
+     const size = Math.floor(width/6);
+     console.log(size);
     const generatearr = () => {
-        for(let i=0; i<250; i++){
+        for(let i=0; i<size; i++){
             var element = Math.ceil(Math.random() * 400);
             arr[i] = element;
         }

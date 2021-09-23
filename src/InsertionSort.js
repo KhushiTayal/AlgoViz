@@ -3,7 +3,7 @@ import React from "react";
 const InsertionSort = (props) => {
     const animations = [];
     const extraArray = props.slice();
-    letsInsertionSort(props, 250, animations, extraArray);
+    letsInsertionSort(props, props.length, animations, extraArray);
     console.log(props);
     return animations;
 }
