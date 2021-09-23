@@ -47,7 +47,7 @@ const Sortingpage = () => {
                 setTimeout(() => {
                     barOneStyle.backgroundColor = color;
                     barTwoStyle.backgroundColor = color;
-                  }, i * 5);
+                  }, i * 1);
             }
             else{
                 setTimeout(() => {
@@ -55,7 +55,7 @@ const Sortingpage = () => {
                     const barOneStyle = bar[firtstIdx].style;
                     barOneStyle.height = `${newHeight}px`;
 
-                }, i * 5);
+                }, i * 1);
             }
         }
 
@@ -106,7 +106,7 @@ const Sortingpage = () => {
                 setTimeout(() => {
                     barOneStyle.backgroundColor = color;
                     barTwoStyle.backgroundColor = color;
-                  }, i * 0.1);
+                  }, i * 1);
             }
             else{
                 const [firtstIdx, newHeight] = animations[i];
@@ -116,7 +116,7 @@ const Sortingpage = () => {
                 setTimeout(() => {
                     const barOneStyle = bar[firtstIdx].style;
                     barOneStyle.height = `${newHeight}px`;
-                }, i * 0.1);
+                }, i * 1);
             }
         }
     }
@@ -186,11 +186,11 @@ const Sortingpage = () => {
             <div className="mybtns">
             <button type="button" class="btn btn-outline-primary" onClick={mergefunc}>Merge Sort</button>
             <button type="button" class="btn btn-outline-secondary" onClick={bubbleSortfunc}>Bubble Sort</button>
-            <button type="button" class="btn btn-outline-success" onClick={Selectionfunc}>Selection Sort</button>
+            {/* <button type="button" class="btn btn-outline-success" onClick={Selectionfunc}>Selection Sort</button> */}
             <button type="button" class="btn btn-outline-danger" onClick={Insertionfunc}>Insertion Sort</button>
             <button type="button" class="btn btn-outline-warning" onClick={Quickfunc}>Quick Sort</button>
             <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>RESET</button>
-            <button type="button" class="btn btn-outline-light">Light</button>
+            {/* <button type="button" class="btn btn-outline-light">Light</button> */}
             <button type="button" class="btn btn-outline-dark"  disabled={disable} onClick={generatearr}>Generate Array!</button>
             </div>
         </div>
