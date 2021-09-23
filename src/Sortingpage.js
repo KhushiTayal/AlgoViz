@@ -4,6 +4,7 @@ import BubbleSort from './BubbleSort';
 import SelectionSort from './SelectionSort';
 import { MergeSort } from './MergeSort';
 import InsertionSort from './InsertionSort';
+import QuickSort from './QuickSort';
 
 const Sortingpage = () => {
     const [a, setArr] = useState([]);
@@ -120,6 +121,35 @@ const Sortingpage = () => {
         }
     }
 
+    const Quickfunc = () => {
+        const animations = QuickSort(a);
+
+        for (let i = 0; i < animations.length; i++){
+            const bar = document.getElementsByClassName('bars');
+            const change = i%3 !== 2;
+            if(change){
+                const [firtstIdx, secondIdx] = animations[i];
+                const secondaryColor = 'blue';
+                const primaryColor = 'hotpink';
+                const barOneStyle = bar[firtstIdx].style;
+                const barTwoStyle = bar[secondIdx].style;
+                const color = i % 3 === 0 ? secondaryColor : primaryColor;
+                setTimeout(() => {
+                    barOneStyle.backgroundColor = color;
+                    barTwoStyle.backgroundColor = color;
+                  }, i * 5);
+            }
+            else{
+                setTimeout(() => {
+                    const [firtstIdx, newHeight] = animations[i];
+                    const barOneStyle = bar[firtstIdx].style;
+                    barOneStyle.height = `${newHeight}px`;
+
+                }, i * 5);
+            }
+        }
+    }
+
     const Insertionfunc = () => {
         const animations = InsertionSort(a);
         for (let i = 0; i < animations.length; i++){
@@ -158,7 +188,7 @@ const Sortingpage = () => {
             <button type="button" class="btn btn-outline-secondary" onClick={bubbleSortfunc}>Bubble Sort</button>
             <button type="button" class="btn btn-outline-success" onClick={Selectionfunc}>Selection Sort</button>
             <button type="button" class="btn btn-outline-danger" onClick={Insertionfunc}>Insertion Sort</button>
-            <button type="button" class="btn btn-outline-warning">Quick Sort</button>
+            <button type="button" class="btn btn-outline-warning" onClick={Quickfunc}>Quick Sort</button>
             <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>RESET</button>
             <button type="button" class="btn btn-outline-light">Light</button>
             <button type="button" class="btn btn-outline-dark"  disabled={disable} onClick={generatearr}>Generate Array!</button>
