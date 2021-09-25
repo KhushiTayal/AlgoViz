@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Node from './Node'
 import './Graphpage.css'
+import bfs from './Bfs';
 
 const Graphpage = () => {
     const [grid, setGrid] = useState([]);
@@ -33,7 +34,8 @@ const Graphpage = () => {
                     endNode:false,
                     vis:false,
                     row,
-                    col
+                    col,
+                    distance:Infinity
                 }
             )
         }
@@ -104,17 +106,30 @@ const Graphpage = () => {
     // setGrid([...grid, ...newBoard]);
     return pairs;
     }
-    
+
+    const callBFS = () => {
+        const animations = bfs(grid, startNode, endNode, num_row, num_col);
+        for( let i = 0;i<animations.length;i++ ){
+            setTimeout(() => {
+                if((animations[i].row!==startNode.row || animations[i].col!==startNode.col) && (animations[i].row!==endNode.row || animations[i].col!==endNode.col) ){
+                    const a = document.getElementById(`node ${animations[i].row}-${animations[i].col}`);
+                    console.log(a);
+                    a.className = "node vis";
+                 }
+            }, i*10);
+        }
+    }
+
     return(
         <div className="containerrr">
          {renderGrid}
          <div className="container">
-         <button type="button" class="btn btn-outline-primary">BFS</button>
+         <button type="button" class="btn btn-outline-primary" onClick={callBFS}>BFS</button>
          <button type="button" class="btn btn-outline-secondary">DFS</button>
 <button type="button" class="btn btn-outline-success">Dijsktra</button>
 <button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
 <button type="button" class="btn btn-outline-warning">Clear Path</button>
-<button type="button" class="btn btn-outline-info">Clear Grid</button>
+<button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>Clear Grid</button>
 <button type="button" class="btn btn-outline-light">Light</button>
 <button type="button" class="btn btn-outline-dark">Dark</button>
          </div>
