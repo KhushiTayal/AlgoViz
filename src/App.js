@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="container-fluid">
     <div className="App">
-      
         <Navbar />
         <Switch>
            <Route path="/" exact component={Home} />

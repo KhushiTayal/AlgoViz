@@ -21,8 +21,9 @@ const Node = (props) => {
             return "node";
         }
     }
+
     return(
-        <div className={decideClass()} id={props.key}>
+        <div id={`node ${row}-${col}`} className={decideClass()} >
             
         </div>
     )

@@ -32,7 +32,7 @@ const Body = () => {
   </div>
 </div>
     </div>
-    <div className="col">
+    {/* <div className="col">
     <div className="card">
   <img src={card} className="card-img-top" alt="..." height="225px" />
   <div className="card-body">
@@ -41,7 +41,7 @@ const Body = () => {
     <Link to="/backtrackingpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
   </div>
 </div>
-    </div>
+    </div> */}
     <div className="col">
     <div className="card">
   <img src={path} className="card-img-top" alt="..." height="225px" />

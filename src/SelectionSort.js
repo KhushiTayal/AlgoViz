@@ -2,21 +2,27 @@ import React from "react";
 
 const SelectionSort = (props) => {
     const animations = [];
-    const extraArray = props.slice();
-    letsSelectionSort(animations, 250, extraArray, props);
+    console.log(props);
+    letsSelectionSort(animations, 250,props);
     console.log(props);
     return animations;
 }
 
-const letsSelectionSort = (animations, n, extraArray, myArr) => {
+function letsSelectionSort (animations, n, myArr){
     for(let i=0; i<n-1; i++){
         let min_idx = i;
         for(let j=i+1; j<n; j++){
-            if(extraArray[j] < extraArray[min_idx]){
+            if(myArr[j] < myArr[min_idx]){
+                animations.push([j, min_idx]);
+                animations.push([j, min_idx]);
+                animations.push([j, myArr[min_idx]]);
+                animations.push([min_idx, myArr[j]]);
                 min_idx = j;
-                myArr[j] = extraArray[min_idx];
-                myArr[min_idx] = extraArray[j];
+                var temp = myArr[j];
+                myArr[j] = myArr[min_idx];
+                myArr[min_idx] = temp;
             }
+            
         }
     }
 }
