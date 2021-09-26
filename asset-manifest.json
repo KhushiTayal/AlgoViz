@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AlgoViz/static/css/main.b6c81522.chunk.css",
-    "main.js": "/AlgoViz/static/js/main.d6b6060c.chunk.js",
-    "main.js.map": "/AlgoViz/static/js/main.d6b6060c.chunk.js.map",
+    "main.js": "/AlgoViz/static/js/main.7f5d3a60.chunk.js",
+    "main.js.map": "/AlgoViz/static/js/main.7f5d3a60.chunk.js.map",
     "runtime-main.js": "/AlgoViz/static/js/runtime-main.aa4bc348.js",
     "runtime-main.js.map": "/AlgoViz/static/js/runtime-main.aa4bc348.js.map",
     "static/js/2.b44c0beb.chunk.js": "/AlgoViz/static/js/2.b44c0beb.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.aa4bc348.js",
     "static/js/2.b44c0beb.chunk.js",
     "static/css/main.b6c81522.chunk.css",
-    "static/js/main.d6b6060c.chunk.js"
+    "static/js/main.7f5d3a60.chunk.js"
   ]
 }
