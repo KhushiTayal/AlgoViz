@@ -1,4 +1,7 @@
-   
+.containerrr{
+    align-items: center;
+    overflow: hidden;
+} 
 .btns{
     margin-top: 2%;
     align-content: center;

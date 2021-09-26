@@ -50,7 +50,7 @@ const Sortingpage = () => {
                 setTimeout(() => {
                     barOneStyle.backgroundColor = color;
                     barTwoStyle.backgroundColor = color;
-                  }, i * 1);
+                  }, i * 2);
             }
             else{
                 setTimeout(() => {
@@ -58,7 +58,7 @@ const Sortingpage = () => {
                     const barOneStyle = bar[firtstIdx].style;
                     barOneStyle.height = `${newHeight}px`;
 
-                }, i * 1);
+                }, i * 2);
             }
         }
 
