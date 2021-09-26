@@ -148,7 +148,7 @@ const Graphpage = () => {
                     const a = document.getElementById(`node ${animations[i].row}-${animations[i].col}`);
                     //console.log(a);
                     a.className = "node vis";
-                    await sleep(5);
+                    await sleep(10);
                  }
            // }, i*1);
         }
@@ -167,11 +167,8 @@ const Graphpage = () => {
          <button type="button" class="btn btn-outline-primary" onClick={callBFS}>BFS</button>
          <button type="button" class="btn btn-outline-secondary" onClick={callDFS}>DFS</button>
 <button type="button" class="btn btn-outline-success">Dijsktra</button>
-<button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
-<button type="button" class="btn btn-outline-warning">Clear Path</button>
 <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>Clear Grid</button>
-<button type="button" class="btn btn-outline-light">Light</button>
-<button type="button" class="btn btn-outline-dark">Dark</button>
+<button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
          </div>
         </div>
     )
