@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Node from './Node'
 import './Graphpage.css'
 import bfs from './Bfs';
+import { getNodesInShortestPathOrder } from './Bfs';
 
 const Graphpage = () => {
     const [grid, setGrid] = useState([]);
@@ -35,7 +36,8 @@ const Graphpage = () => {
                     vis:false,
                     row,
                     col,
-                    distance:Infinity
+                    distance:Infinity,
+                    previousNode:null
                 }
             )
         }
@@ -78,7 +80,7 @@ const Graphpage = () => {
     })
 
     const createMaze = () => {
-    console.log("Heyya")
+  //  console.log("Heyya")
     let newBoard = grid.slice();
     const pairs = [];
     for(let i = 0;i<num_row;i++){
@@ -98,7 +100,7 @@ const Graphpage = () => {
         setTimeout(() => {
             if((pairs[i].xx!==startNode.row || pairs[i].yy!==startNode.col) && (pairs[i].xx!==endNode.row || pairs[i].yy!==endNode.col) ){
                 const a = document.getElementById(`node ${pairs[i].xx}-${pairs[i].yy}`);
-                console.log(a);
+               // console.log(a);
                 a.className = "node wall";
              }
         }, i*20);
@@ -109,14 +111,42 @@ const Graphpage = () => {
 
     const callBFS = () => {
         const animations = bfs(grid, startNode, endNode, num_row, num_col);
-        for( let i = 0;i<animations.length;i++ ){
-            setTimeout(() => {
+        const bfsPath = getNodesInShortestPathOrder(endNode, grid, startNode);
+        animateGrid(bfsPath, animations);
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function animatePath(bfsPath, animations){
+        for(let j=0; j<bfsPath.length; j++){
+           // setTimeout(() => {
+                if((animations[j].row!==startNode.row || animations[j].col!==startNode.col) && (animations[j].row!==endNode.row || animations[j].col!==endNode.col) ){
+                    const a = document.getElementById(`node ${bfsPath[j].row}-${bfsPath[j].col}`);
+                    console.log(a);
+                    a.className = "node path";
+                    await sleep(50);
+                 }
+           // }, j*50);
+        }
+    }
+
+    async function animateGrid(bfsPath, animations) {
+        for(let i=0; i<=animations.length; i++){
+            if(i === animations.length){
+                await sleep(1000);
+                await animatePath(bfsPath, animations);
+                return;
+            }
+           // setTimeout(() => {
                 if((animations[i].row!==startNode.row || animations[i].col!==startNode.col) && (animations[i].row!==endNode.row || animations[i].col!==endNode.col) ){
                     const a = document.getElementById(`node ${animations[i].row}-${animations[i].col}`);
-                    console.log(a);
+                    //console.log(a);
                     a.className = "node vis";
+                    await sleep(10);
                  }
-            }, i*10);
+           // }, i*1);
         }
     }
 
