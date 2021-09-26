@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/AlgoViz/static/css/main.f30a29f2.chunk.css",
-    "main.js": "/AlgoViz/static/js/main.ce0b59af.chunk.js",
-    "main.js.map": "/AlgoViz/static/js/main.ce0b59af.chunk.js.map",
+    "main.css": "/AlgoViz/static/css/main.fbc96582.chunk.css",
+    "main.js": "/AlgoViz/static/js/main.1f9c2cfd.chunk.js",
+    "main.js.map": "/AlgoViz/static/js/main.1f9c2cfd.chunk.js.map",
     "runtime-main.js": "/AlgoViz/static/js/runtime-main.aa4bc348.js",
     "runtime-main.js.map": "/AlgoViz/static/js/runtime-main.aa4bc348.js.map",
     "static/js/2.b44c0beb.chunk.js": "/AlgoViz/static/js/2.b44c0beb.chunk.js",
     "static/js/2.b44c0beb.chunk.js.map": "/AlgoViz/static/js/2.b44c0beb.chunk.js.map",
     "index.html": "/AlgoViz/index.html",
-    "static/css/main.f30a29f2.chunk.css.map": "/AlgoViz/static/css/main.f30a29f2.chunk.css.map",
+    "static/css/main.fbc96582.chunk.css.map": "/AlgoViz/static/css/main.fbc96582.chunk.css.map",
     "static/js/2.b44c0beb.chunk.js.LICENSE.txt": "/AlgoViz/static/js/2.b44c0beb.chunk.js.LICENSE.txt",
     "static/media/abc.f8630668.png": "/AlgoViz/static/media/abc.f8630668.png",
     "static/media/card.370ba8db.png": "/AlgoViz/static/media/card.370ba8db.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.aa4bc348.js",
     "static/js/2.b44c0beb.chunk.js",
-    "static/css/main.f30a29f2.chunk.css",
-    "static/js/main.ce0b59af.chunk.js"
+    "static/css/main.fbc96582.chunk.css",
+    "static/js/main.1f9c2cfd.chunk.js"
   ]
 }
