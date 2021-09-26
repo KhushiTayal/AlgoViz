@@ -9,12 +9,12 @@ function bfs (grid, startNode, endNode, num_row, num_col){
     const nodes=[]
     queue.push(startNode);
     grid[sRow][sCol].vis = true;
-    var min_dis = Infinity;
+    //var min_dis = Infinity;
     while(!!queue.length){
         const node = queue[0];
        // grid[node.row][node.col].vis = true;
      //  node.vis=true;
-        node.distance = 1;
+       // node.distance = 1;
         queue.shift();
         nodes.push(node);
        // console.log(node);
@@ -52,7 +52,7 @@ export function getNodesInShortestPathOrder(finishNode, grid, startNode) {
     let node = grid[finishNode.row][finishNode.col];
     //console.log(grid);
     while (node !== startNode.previousNode) {
-        //console.log(node);
+        console.log(node);
       nodesInShortestPathOrder.unshift(node);
       node = node.previousNode;
       

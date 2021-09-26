@@ -3,6 +3,8 @@ import Node from './Node'
 import './Graphpage.css'
 import bfs from './Bfs';
 import { getNodesInShortestPathOrder } from './Bfs';
+import dfs from './Dfs';
+import { getNodesInShortestPathOrderdfs } from './Dfs';
 
 const Graphpage = () => {
     const [grid, setGrid] = useState([]);
@@ -119,12 +121,14 @@ const Graphpage = () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function animatePath(bfsPath, animations){
-        for(let j=0; j<bfsPath.length; j++){
+    async function animatePath(Path, animations){
+       // console.log(Path.length);
+        for(let j=0; j<Path.length; j++){
+            //console.log(Path[j]);
            // setTimeout(() => {
-                if((animations[j].row!==startNode.row || animations[j].col!==startNode.col) && (animations[j].row!==endNode.row || animations[j].col!==endNode.col) ){
-                    const a = document.getElementById(`node ${bfsPath[j].row}-${bfsPath[j].col}`);
-                    console.log(a);
+                if((Path[j].row!==startNode.row || Path[j].col!==startNode.col) && (Path[j].row!==endNode.row || Path[j].col!==endNode.col) ){
+                    const a = document.getElementById(`node ${Path[j].row}-${Path[j].col}`);
+                    //console.log(a);
                     a.className = "node path";
                     await sleep(50);
                  }
@@ -132,11 +136,11 @@ const Graphpage = () => {
         }
     }
 
-    async function animateGrid(bfsPath, animations) {
+    async function animateGrid(Path, animations) {
         for(let i=0; i<=animations.length; i++){
             if(i === animations.length){
                 await sleep(1000);
-                await animatePath(bfsPath, animations);
+                await animatePath(Path, animations);
                 return;
             }
            // setTimeout(() => {
@@ -144,10 +148,16 @@ const Graphpage = () => {
                     const a = document.getElementById(`node ${animations[i].row}-${animations[i].col}`);
                     //console.log(a);
                     a.className = "node vis";
-                    await sleep(10);
+                    await sleep(5);
                  }
            // }, i*1);
         }
+    }
+
+    function callDFS (){
+        const animations = dfs(grid, startNode, endNode, num_row, num_col);
+        const dfsPath = getNodesInShortestPathOrder(endNode, grid, startNode);
+        animateGrid(dfsPath, animations);
     }
 
     return(
@@ -155,7 +165,7 @@ const Graphpage = () => {
          {renderGrid}
          <div className="container">
          <button type="button" class="btn btn-outline-primary" onClick={callBFS}>BFS</button>
-         <button type="button" class="btn btn-outline-secondary">DFS</button>
+         <button type="button" class="btn btn-outline-secondary" onClick={callDFS}>DFS</button>
 <button type="button" class="btn btn-outline-success">Dijsktra</button>
 <button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
 <button type="button" class="btn btn-outline-warning">Clear Path</button>
