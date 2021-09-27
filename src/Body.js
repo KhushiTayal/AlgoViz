@@ -36,7 +36,7 @@ const Body = () => {
 
     <div className="col">
     <div className="card">
-  <img src={search} className="card-img-top" alt="..." height="200px" />
+  <img src={card} className="card-img-top" alt="..." height="200px" />
   <div className="card-body">
     <h5 className="card-title">Search Methods</h5>
     <p className="card-text">Search an element from array using different methods.</p>
