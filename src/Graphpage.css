@@ -60,12 +60,12 @@
 @keyframes visitedAnimation {
     0% {
         transform: scale(0.3);
-        background-color: red;
+        background-color: purple;
         border-radius: 100%;
     }
 
     50% {
-        background-color: rgb(236, 27, 236);
+        background-color: rgb(252, 115, 252);
     }
 
     75% {

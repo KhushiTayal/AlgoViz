@@ -5,6 +5,8 @@ import bfs from './Bfs';
 import { getNodesInShortestPathOrder } from './Bfs';
 import dfs from './Dfs';
 import { getNodesInShortestPathOrderdfs } from './Dfs';
+import dijkstra from './Dijkstra';
+import { getNodesInShortestPathOrderDijkstra } from './Dijkstra';
 
 const Graphpage = () => {
     const [grid, setGrid] = useState([]);
@@ -130,7 +132,7 @@ const Graphpage = () => {
                     const a = document.getElementById(`node ${Path[j].row}-${Path[j].col}`);
                     //console.log(a);
                     a.className = "node path";
-                    await sleep(50);
+                    await sleep(100);
                  }
            // }, j*50);
         }
@@ -148,7 +150,7 @@ const Graphpage = () => {
                     const a = document.getElementById(`node ${animations[i].row}-${animations[i].col}`);
                     //console.log(a);
                     a.className = "node vis";
-                    await sleep(10);
+                    await sleep(50);
                  }
            // }, i*1);
         }
@@ -160,13 +162,19 @@ const Graphpage = () => {
         animateGrid(dfsPath, animations);
     }
 
+    function callDijsktra(){
+        const animations = dijkstra(grid, startNode, endNode, num_row, num_col);
+        console.log(animations);
+        const dijkPath = getNodesInShortestPathOrderDijkstra(endNode, grid, startNode);
+        animateGrid(dijkPath, animations);
+    }
     return(
         <div className="containerrr">
          {renderGrid}
          <div className="container">
          <button type="button" class="btn btn-outline-primary" onClick={callBFS}>BFS</button>
          <button type="button" class="btn btn-outline-secondary" onClick={callDFS}>DFS</button>
-<button type="button" class="btn btn-outline-success">Dijsktra</button>
+<button type="button" class="btn btn-outline-success" onClick={callDijsktra}>Dijsktra</button>
 <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>Clear Grid</button>
 <button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
          </div>
