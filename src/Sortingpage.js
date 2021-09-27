@@ -11,7 +11,7 @@ const Sortingpage = () => {
      let arr = [];
      const [disable, setDisable] = useState(false);
      const width = window.innerWidth;
-     const size = Math.floor(width/6);
+     const size = Math.floor(width/12);
      console.log(size);
     const generatearr = () => {
         for(let i=0; i<size; i++){

@@ -10,6 +10,10 @@ import { getNodesInShortestPathOrderDijkstra } from './Dijkstra';
 
 const Graphpage = () => {
     const [grid, setGrid] = useState([]);
+    // const [disableBFS, setDisableBFS] = useState(false);
+    // const [disableDFS, setDisableDFS] = useState(false);
+    // const [disableDijk, setDisableDijk] = useState(false);
+    // const [disableMaze, setDisableMaze] = useState(false);
     const width = window.innerWidth;
         const height = window.innerHeight;
         const num_row = Math.max(Math.floor(height/25),10);
@@ -98,18 +102,18 @@ const Graphpage = () => {
                 });
             }
         }
+       // setDisableMaze(true)
     }
     
     for( let i = 0;i<pairs.length;i++ ){
         setTimeout(() => {
             if((pairs[i].xx!==startNode.row || pairs[i].yy!==startNode.col) && (pairs[i].xx!==endNode.row || pairs[i].yy!==endNode.col) ){
                 const a = document.getElementById(`node ${pairs[i].xx}-${pairs[i].yy}`);
-               // console.log(a);
                 a.className = "node wall";
              }
         }, i*20);
     }
-    // setGrid([...grid, ...newBoard]);
+    
     return pairs;
     }
 
@@ -117,6 +121,7 @@ const Graphpage = () => {
         const animations = bfs(grid, startNode, endNode, num_row, num_col);
         const bfsPath = getNodesInShortestPathOrder(endNode, grid, startNode);
         animateGrid(bfsPath, animations);
+        //setDisableBFS(true)
     }
 
     function sleep(ms) {
@@ -141,7 +146,7 @@ const Graphpage = () => {
     async function animateGrid(Path, animations) {
         for(let i=0; i<=animations.length; i++){
             if(i === animations.length){
-                await sleep(1000);
+                await sleep(500);
                 await animatePath(Path, animations);
                 return;
             }
@@ -160,6 +165,7 @@ const Graphpage = () => {
         const animations = dfs(grid, startNode, endNode, num_row, num_col);
         const dfsPath = getNodesInShortestPathOrder(endNode, grid, startNode);
         animateGrid(dfsPath, animations);
+        //setDisableDFS(true)
     }
 
     function callDijsktra(){
@@ -167,6 +173,7 @@ const Graphpage = () => {
         console.log(animations);
         const dijkPath = getNodesInShortestPathOrderDijkstra(endNode, grid, startNode);
         animateGrid(dijkPath, animations);
+        //setDisableDijk(true)
     }
     return(
         <div className="containerrr">
