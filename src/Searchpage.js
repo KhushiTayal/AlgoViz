@@ -6,7 +6,6 @@ import './Searchpage.css'
 
 const Searchpage = () => {
     const [a, setArr] = useState([]);
-   // var arr = [18,2,3,4,5,6,7,8,9,10,11,12,13,14,5,16,17,1];
      let arr = [];
      const [disable, setDisable] = useState(false);
     const generatearr = () => {
@@ -19,13 +18,7 @@ const Searchpage = () => {
             return a - b;
           });
         setArr([...a, ...arr]);
-        
-           // console.log(a);
-            setDisable(true)
-            // for(let i=0; i<16; i++){
-            //     console.log(a[i]);
-            // }
-
+        setDisable(true)
     }
     
     const renderarr = a.map((num , idx) => {
@@ -61,7 +54,6 @@ const onInputChange = async e =>{
                 if(a[i] == data.name){
                     console.log("yes");
                     pxa.backgroundColor = '#29ff0c';
-                    //alert("NUMBER MIL GAYA");
                     return;
                 }
                 else{
@@ -80,7 +72,6 @@ const onInputChange = async e =>{
         }
         myLoop();
         console.log("no");
-        //alert("NUMBER NHI MILA");
     }
     const binary = () => {
         var s=0;
@@ -127,8 +118,8 @@ const onInputChange = async e =>{
     return(
         <div className="Searchpage">
             <div className="buttons">
-            <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr}>Generate Array!</button>
-            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)}>Reset</button>
+            <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr} style={{backgroundColor:'rgb(145, 255, 0)'}}>Generate Array!</button>
+            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)} style={{backgroundColor:'#fa5b55'}}>Reset</button>
             </div>
             <div className="co">
                 {renderarr}
@@ -136,8 +127,8 @@ const onInputChange = async e =>{
             </div> 
             <div class="d-grid gap-2 col-6 mx-auto">
                 
-                <p className="enter">Enter a number </p>
-                <input type="number" name="name" className="inputnum" onChange={onInputChange}/>
+                <p className="enter">Search Number</p>
+                <input type="number" name="name" className="inputnum" onChange={onInputChange} placeholder="Enter a number to search"/>
               <button class="btn btn-primary" type="button" onClick={linear} >Linear Search</button>
               <button class="btn btn-primary" type="button" onClick={binary}>Binary Search</button>
              </div>
