@@ -53,11 +53,11 @@ const onInputChange = async e =>{
             setTimeout(function(){
                 if(a[i] == data.name){
                     console.log("yes");
-                    pxa.backgroundColor = '#29ff0c';
+                    pxa.backgroundColor = '#bce563';
                     return;
                 }
                 else{
-                    pxa.backgroundColor = '#fa5b55';
+                    pxa.backgroundColor = '#e58c63';
                     pxa.textDecoration = "line-through";
                     if(i<15){
                         i++;
@@ -83,12 +83,12 @@ const onInputChange = async e =>{
             pxa.backgroundColor = 'yellow';
             setTimeout(() => {
                 if(a[mid] == data.name){
-                    pxa.backgroundColor = '#29ff0c';
+                    pxa.backgroundColor = '#bce563';
                     return;
                 }
                 else if(a[mid] > data.name){
                     for(let i=mid+1; i<=e; i++){
-                        axp[i].style.backgroundColor = '#fa5b55';
+                        axp[i].style.backgroundColor = '#e58c63';
                         axp[i].style.textDecoration = "line-through";
                     }
                     e= mid-1;
@@ -97,7 +97,7 @@ const onInputChange = async e =>{
                 }
                 else if(a[mid] < data.name){
                     for(let i=s; i<mid; i++){
-                        axp[i].style.backgroundColor = '#fa5b55';
+                        axp[i].style.backgroundColor = '#e58c63';
                         axp[i].style.textDecoration = "line-through";
                     }
                     s= mid+1;
@@ -118,8 +118,8 @@ const onInputChange = async e =>{
     return(
         <div className="Searchpage">
             <div className="buttons">
-            <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr} style={{backgroundColor:'rgb(145, 255, 0)'}}>Generate Array!</button>
-            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)} style={{backgroundColor:'#fa5b55'}}>Reset</button>
+            <button class="btn btn-lg btn-primary" type="button" disabled={disable} onClick={generatearr} style={{backgroundColor:'#63e5cd'}}>Generate Array!</button>
+            <button type="button" class="btn btn-secondary btn-lg" onClick={() => window.location.reload(false)} style={{backgroundColor:'#e563bc'}}>Reset</button>
             </div>
             <div className="co">
                 {renderarr}
@@ -129,8 +129,8 @@ const onInputChange = async e =>{
                 
                 <p className="enter">Search Number</p>
                 <input type="number" name="name" className="inputnum" onChange={onInputChange} placeholder="Enter a number to search"/>
-              <button class="btn btn-primary" type="button" onClick={linear} >Linear Search</button>
-              <button class="btn btn-primary" type="button" onClick={binary}>Binary Search</button>
+              <button class="btn btn-primary" type="button" onClick={linear} style={{backgroundColor:'#3778c2'}}>Linear Search</button>
+              <button class="btn btn-primary" type="button" onClick={binary} style={{backgroundColor:'#3778c2'}}>Binary Search</button>
              </div>
             
         </div>

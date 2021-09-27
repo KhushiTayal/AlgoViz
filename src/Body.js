@@ -18,7 +18,7 @@ const Body = () => {
   <div className="card-body">
     <h5 className="card-title">Path Finding</h5>
     <p className="card-text">Visualize BFS, DFS & Dijkstra's Algorithm.</p>
-    <Link to="/graphpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
+    <Link to="/graphpage"><button className="btn btn-primary" style={{backgroundColor:'#3778c2'}}>Let's Visualize!</button></Link>
   </div>
 </div>
     </div>
@@ -29,7 +29,7 @@ const Body = () => {
   <div className="card-body">
     <h5 className="card-title">Sorting Algorithms</h5>
     <p className="card-text">Sort array using different sorting algorithms.</p>
-    <Link to="/sortingpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
+    <Link to="/sortingpage"><button className="btn btn-primary" style={{backgroundColor:'#3778c2'}}>Let's Visualize!</button></Link>
   </div>
 </div>
     </div>
@@ -40,7 +40,7 @@ const Body = () => {
   <div className="card-body">
     <h5 className="card-title">Search Methods</h5>
     <p className="card-text">Search an element from array using different methods.</p>
-    <Link to="/searchpage"><button className="btn btn-primary">Let's Visualize!</button></Link>
+    <Link to="/searchpage"><button className="btn btn-primary" style={{backgroundColor:'#3778c2'}}>Let's Visualize!</button></Link>
   </div>
 </div>
     </div>

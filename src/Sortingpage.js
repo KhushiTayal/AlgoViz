@@ -42,8 +42,8 @@ const Sortingpage = () => {
             const change = i%3 !== 2;
             if(change){
                 const [firtstIdx, secondIdx] = animations[i];
-                const secondaryColor = 'blue';
-                const primaryColor = 'hotpink';
+                const secondaryColor = 'yellow';
+                const primaryColor = '#63bce5';
                 const barOneStyle = bar[firtstIdx].style;
                 const barTwoStyle = bar[secondIdx].style;
                 const color = i % 3 === 0 ? secondaryColor : primaryColor;
@@ -71,8 +71,8 @@ const Sortingpage = () => {
         const change = (i%4 === 0) || (i%4 === 1);
         if(change){
             const [firtstIdx, secondIdx] = animations[i];
-            const secondaryColor = 'blue';
-            const primaryColor = 'hotpink';
+            const secondaryColor = 'yellow';
+            const primaryColor = '#63bce5';
             const barOneStyle = bar[firtstIdx].style;
             const barTwoStyle = bar[secondIdx].style;
             const color = i % 4 === 0 ? secondaryColor : primaryColor;
@@ -101,8 +101,8 @@ const Sortingpage = () => {
             const change = (i%4 === 0) || (i%4 === 1);
             if(change){
                 const [firtstIdx, secondIdx] = animations[i];
-                const secondaryColor = 'blue';
-                const primaryColor = 'hotpink';
+                const secondaryColor = 'yellow';
+                const primaryColor = '#63bce5';
                 const barOneStyle = bar[firtstIdx].style;
                 const barTwoStyle = bar[secondIdx].style;
                 const color = i % 4 === 0 ? secondaryColor : primaryColor;
@@ -132,8 +132,8 @@ const Sortingpage = () => {
             const change = i%3 !== 2;
             if(change){
                 const [firtstIdx, secondIdx] = animations[i];
-                const secondaryColor = 'blue';
-                const primaryColor = 'hotpink';
+                const secondaryColor = 'yellow';
+                const primaryColor = '#63bce5';
                 const barOneStyle = bar[firtstIdx].style;
                 const barTwoStyle = bar[secondIdx].style;
                 const color = i % 3 === 0 ? secondaryColor : primaryColor;
@@ -160,8 +160,8 @@ const Sortingpage = () => {
             const change = (i%4 === 0) || (i%4 === 1);
             if(change){
                 const [firtstIdx, secondIdx] = animations[i];
-                const secondaryColor = 'blue';
-                const primaryColor = 'hotpink';
+                const secondaryColor = 'yellow';
+                const primaryColor = '#63bce5';
                 const barOneStyle = bar[firtstIdx].style;
                 const barTwoStyle = bar[secondIdx].style;
                 const color = i % 4 === 0 ? secondaryColor : primaryColor;
