@@ -174,7 +174,7 @@ const Graphpage = () => {
          <div className="container">
          <button type="button" class="btn btn-outline-primary" onClick={callBFS}>BFS</button>
          <button type="button" class="btn btn-outline-secondary" onClick={callDFS}>DFS</button>
-<button type="button" class="btn btn-outline-success" onClick={callDijsktra}>Dijsktra</button>
+<button type="button" class="btn btn-outline-success" onClick={callDijsktra}>Dijkstra</button>
 <button type="button" class="btn btn-outline-info" onClick={() => window.location.reload(false)}>Clear Grid</button>
 <button type="button" class="btn btn-outline-danger" onClick={createMaze}>Create Maze</button>
          </div>
