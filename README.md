@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Algorithm Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Algorithm Visualizer is an interactive way and platform that visualize the algorithms.
+The project focuses on visualizng the algorithm and try to make easier to understand and learn the algorithm.
 
 ## Available Scripts
 
